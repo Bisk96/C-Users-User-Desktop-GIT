@@ -8,3 +8,9 @@ GtkWidget* create_window_menu (void);
 GtkWidget* create_Gestions_comptes (void);
 GtkWidget* create_ajouter_ADMIN (void);
 GtkWidget* create_modifier (void);
+
+GtkWidget* create_window2 (void);
+GtkWidget* create_window3 (void);
+GtkWidget* create_window5 (void);
+GtkWidget* create_window6 (void);
+GtkWidget* create_window7 (void);

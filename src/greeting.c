@@ -35,7 +35,7 @@ int id(char log[],char password[], char hello[])
 
 
 
-int ajouter(char log[50],char password[50],int role,char cin[50])
+int ajouter_a(char log[50],char password[50],int role,char cin[50])
 {
 FILE *f;
 
@@ -54,25 +54,7 @@ fclose(f);
 return 1;
 }
 
-void supprimer(char login[])
-{
-FILE *f,*f2;char var[50];char var1[50];int var2;
-f=fopen("src/admin.txt","r");
-f2=fopen("src/tomp.txt","a+");
-while(fscanf(f,"%s %s %d",var,var1,&var2)!=EOF)
-	{
 
-
-		if (strcmp(login,var)!=0)
-		{
-		fprintf(f2,"%s %s %d\n",var,var1,var2);
-		fclose(f2);
-		}
-
-	}	
-
-fclose(f);
-}
 
 void afficher(GtkWidget *pListView,int role)
 {

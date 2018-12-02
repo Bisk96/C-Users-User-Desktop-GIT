@@ -8,6 +8,8 @@
 #include "interface.h"
 #include "support.h"
 #include "greeting.h"
+#include "fonctions.h"
+#include "string.h"
 void
 logiin                                 (GtkWidget       *objet_graphique,
                                         gpointer         user_data)
@@ -17,7 +19,7 @@ char log[50]; char password[50];char hello [50];FILE* f;
 GtkWidget *input;
 GtkWidget *input2;
 GtkWidget *output;
-
+GtkWidget *window2;
 GtkWidget *login;
 GtkWidget *window_menu;
 GtkWidget *espace_kine;
@@ -46,8 +48,8 @@ int x =id(log,password,hello);
 		}
 	if(x==2)
 	{
-		espace_kine=create_espace_kine();
-		gtk_widget_show (espace_kine);
+		window2=create_window2();
+		gtk_widget_show (window2);
 		gtk_widget_hide(login);
 
 	}
@@ -185,7 +187,7 @@ output=lookup_widget(objet_graphique,"label53");
 strcpy(logs,gtk_entry_get_text(GTK_ENTRY(input3)));
 strcpy(passwords,gtk_entry_get_text(GTK_ENTRY(input4)));
 strcpy(CIN,gtk_entry_get_text(GTK_ENTRY(input5)));
-int x=ajouter(logs,passwords,1,CIN); 
+int x=ajouter_a(logs,passwords,1,CIN); 
 if(x==1)
 {
 	GtkWidget *ajouter_ADMIN;
@@ -332,6 +334,131 @@ void
 ajouter_KIN__                          (GtkButton       *button,
                                         gpointer         user_data)
 {
+
+}
+
+
+//manel
+
+void
+consulter_les_fiches_medicales         (GtkWidget      *objet_graphique,
+                                        gpointer         user_data)
+{ 
+GtkWidget *window2;
+GtkWidget *window3;
+GtkWidget *listeview ;
+
+window2=lookup_widget(objet_graphique,"window2");
+window3=create_window3() ;
+listeview=lookup_widget(window3,"treeview2");
+afficher_(listeview);
+gtk_widget_show (window3);
+gtk_widget_hide(window2) ;
+
+
+
+}
+
+
+void
+horaires_et_rendez_vous                (GtkWidget      *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *window2;
+GtkWidget *window5;
+GtkWidget *listeview ;
+window2=lookup_widget(objet_graphique,"window2") ;
+window5=create_window5();
+listeview=lookup_widget(window5,"treeview3");
+afficher3(listeview);
+gtk_widget_show(window5);
+gtk_widget_hide(window2);
+
+}
+
+
+void
+calendrier                 
+            (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *window2;
+GtkWidget *window6;
+window2=lookup_widget(objet_graphique,"window2") ;
+window6=create_window6() ;
+
+gtk_widget_show(window6) ;
+gtk_widget_hide(window2);
+
+
+
+}
+
+
+
+void
+ajouter                                (GtkWidget      *objet_graphique,
+                                        gpointer         user_data)
+{GtkWidget *window5;
+GtkWidget *window7;
+
+
+window5=lookup_widget(objet_graphique,"window5");
+window7=create_window7() ;
+gtk_widget_show (window7);
+gtk_widget_hide(window5) ;
+
+}
+
+
+
+
+void
+modifier                               (GtkButton       *button,
+                                        gpointer         user_data)
+{ 
+
+
+}
+
+
+void
+supprimer                              (GtkButton       *button,
+                                        gpointer         user_data)
+{
+
+}
+
+
+void
+confirmer_                             (GtkWidget     *objet_graphique,
+                                        gpointer         user_data)
+{ char nom [50] ; char prenom[50] ; char heures_de_rendezvous[50] ;int jour ; int mois ; int annee  ;
+GtkWidget *combobox1 ;
+GtkWidget *jour1 ;
+GtkWidget *mois1 ;
+GtkWidget *annee1;
+GtkWidget *label17 ;
+GtkWidget *window7 ;
+GtkWidget *input2 ;
+GtkWidget *input3 ;
+
+combobox1=lookup_widget(objet_graphique,"combobox1");
+jour1=lookup_widget(objet_graphique,"spinbutton1");
+mois1=lookup_widget(objet_graphique,"spinbutton2");
+annee1=lookup_widget(objet_graphique,"spinbutton3");
+window7=lookup_widget(objet_graphique,"window7") ;
+input2=lookup_widget(objet_graphique,"entry3") ;
+input3=lookup_widget(objet_graphique,"entry4") ;
+
+strcpy(heures_de_rendezvous,gtk_combo_box_get_active_text(GTK_COMBO_BOX(combobox1)));
+jour=gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(jour1));
+mois=gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(mois1));
+annee=gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(annee1));
+strcpy(nom,gtk_entry_get_text(GTK_ENTRY(input2)));
+strcpy(prenom,gtk_entry_get_text(GTK_ENTRY(input3)));
+
+ajouter2(nom,prenom,heures_de_rendezvous,jour,mois,annee);
 
 }
 

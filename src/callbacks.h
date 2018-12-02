@@ -66,3 +66,32 @@ valider_modifier_ADMIN                 (GtkWidget       *objet_graphique,
 void
 ajouter_KIN__                          (GtkButton       *button,
                                         gpointer         user_data);
+//manel
+void
+consulter_les_fiches_medicales         (GtkWidget      *objet_graphique,
+                                        gpointer         user_data);
+
+void
+horaires_et_rendez_vous                (GtkWidget      *objet_graphique,
+                                        gpointer         user_data);
+
+void
+calendrier                             (GtkWidget      *objet_graphique,
+                                        gpointer         user_data);
+
+void
+ajouter                                (GtkWidget      *objet_graphique,
+                                        gpointer         user_data);
+
+
+void
+modifier                               (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+supprimer                              (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+confirmer_                             (GtkWidget     *objet_graphiques,
+                                        gpointer         user_data);

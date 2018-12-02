@@ -12,7 +12,8 @@ admin_SOURCES = \
 	support.c support.h \
 	interface.c interface.h \
 	callbacks.c callbacks.h \
-    greeting.c greeting.h
+    greeting.c greeting.h \
+	fonctions.c fonctions.h
 
 admin_LDADD = @PACKAGE_LIBS@ $(INTLLIBS)
 
